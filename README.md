@@ -1,4 +1,4 @@
-# Utrust Payment Compatability with Hyvä Checkout
+# Viva Payment Compatability with Hyvä Checkout
 
 ## Installation
 
