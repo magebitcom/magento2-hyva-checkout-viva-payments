@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @copyright Copyright (c) 2024 Magebit, Ltd. (https://magebit.com/)
+ * @author    Magebit <info@magebit.com>
+ * @license   MIT
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd"
+>
+    <type name="Hyva\CompatModuleFallback\Model\CompatModuleRegistry">
+        <arguments>
+            <argument name="compatModules" xsi:type="array">
+                <item name="hyva-magento2-checkout-vivasmart" xsi:type="array">
+                    <item name="original_module" xsi:type="string">Ced_VivaPayments</item>
+                    <item name="compat_module" xsi:type="string">Magebit_CheckoutVivaSmartPayment</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Hyva\Checkout\Model\Magewire\Payment\PlaceOrderServiceProvider">
+        <arguments>
+            <argument name="placeOrderServiceList" xsi:type="array">
+                <item name="paymentmethod" xsi:type="object">Magebit\CheckoutVivaSmartPayment\Magewire\Checkout\Payment\VivaSmartPlaceOrderService</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
